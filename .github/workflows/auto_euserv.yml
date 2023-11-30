@@ -24,10 +24,10 @@ jobs:
 
     - name: Run script
       env:
-        EUSERV_USERNAME: ${{ secrets.EUSERV_USERNAME }}
-        EUSERV_PASSWORD: ${{ secrets.EUSERV_PASSWORD }}
-        TRUECAPTCHA_USERID: ${{ secrets.TRUECAPTCHA_USERID }}
-        TRUECAPTCHA_APIKEY: ${{ secrets.TRUECAPTCHA_APIKEY }}
+        EUSERV_USERNAME: zhayuyang0427@gmail.com
+        EUSERV_PASSWORD: Stevie1234
+        TRUECAPTCHA_USERID: Stevie0427
+        TRUECAPTCHA_APIKEY: DfVOhoyDxH0xCat9s0eL
         TG_BOT_TOKEN: ${{ secrets.TG_BOT_TOKEN }}
         TG_USER_ID: ${{ secrets.TG_USER_ID }}
         MAILPARSER_DOWNLOAD_URL_ID: ${{ secrets.MAILPARSER_DOWNLOAD_URL_ID }}
