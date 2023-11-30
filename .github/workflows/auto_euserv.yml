@@ -25,7 +25,7 @@ jobs:
     - name: Run script
       env:
         EUSERV_USERNAME: zhayuyang0427@gmail.com
-        EUSERV_PASSWORD: Stevie1234
+        EUSERV_PASSWORD: Stevie1234!
         TRUECAPTCHA_USERID: Stevie0427
         TRUECAPTCHA_APIKEY: DfVOhoyDxH0xCat9s0eL
         TG_BOT_TOKEN: ${{ secrets.TG_BOT_TOKEN }}
