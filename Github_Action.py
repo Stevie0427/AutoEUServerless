@@ -17,12 +17,12 @@ import requests
 from bs4 import BeautifulSoup
 
 # 账户信息：用户名和密码
-USERNAME = os.getenv('zhayuyang0427@gmail.com')  # 填写用户名或邮箱
-PASSWORD = os.getenv('Stevie1234')  # 填写密码
+USERNAME = os.getenv('EUSERV_USERNAME')  # 填写用户名或邮箱
+PASSWORD = os.getenv('EUSERV_PASSWORD')  # 填写密码
 
 # TrueCaptcha API 配置
-TRUECAPTCHA_USERID = os.getenv('Stevie0427')
-TRUECAPTCHA_APIKEY = os.getenv('DfVOhoyDxH0xCat9s0eL')
+TRUECAPTCHA_USERID = os.getenv('TRUECAPTCHA_USERID')
+TRUECAPTCHA_APIKEY = os.getenv('TRUECAPTCHA_APIKEY')
 
 # Mailparser 配置
 MAILPARSER_DOWNLOAD_URL_ID = os.getenv('MAILPARSER_DOWNLOAD_URL_ID')
