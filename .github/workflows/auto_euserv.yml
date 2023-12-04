@@ -26,8 +26,8 @@ jobs:
       env:
         EUSERV_USERNAME: zhayuyang0427@gmail.com
         EUSERV_PASSWORD: Stevie1234!
-        TRUECAPTCHA_USERID: Stevie0427
-        TRUECAPTCHA_APIKEY: DfVOhoyDxH0xCat9s0eL
+        TRUECAPTCHA_USERID: demo-user-1
+        TRUECAPTCHA_APIKEY: soyxMWnziLzPHUgjYw9i
         TG_BOT_TOKEN: ${{ secrets.TG_BOT_TOKEN }}
         TG_USER_ID: ${{ secrets.TG_USER_ID }}
         MAILPARSER_DOWNLOAD_URL_ID: hcpmdyvh
