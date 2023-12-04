@@ -43,7 +43,7 @@ LOGIN_MAX_RETRY_COUNT = 5
 WAITING_TIME_OF_PIN = 15
 
 # 是否检查验证码解决器的使用情况
-CHECK_CAPTCHA_SOLVER_USAGE = True
+CHECK_CAPTCHA_SOLVER_USAGE = False
 
 user_agent = (
     "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) "
@@ -120,7 +120,7 @@ def captcha_solver(captcha_image_url: str, session: requests.session) -> dict:
         "userid": TRUECAPTCHA_USERID,
         "apikey": TRUECAPTCHA_APIKEY,
         "case": "mixed",
-        "mode": "human",
+        "mode": "auto",
         "data": str(encoded_string)[2:-1],
     }
     r = requests.post(url=url, json=data)
