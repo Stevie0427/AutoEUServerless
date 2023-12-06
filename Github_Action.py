@@ -14,6 +14,7 @@ import json
 import time
 import base64
 import requests
+import nopecha
 from bs4 import BeautifulSoup
 
 # 账户信息：用户名和密码
@@ -127,21 +128,11 @@ def captcha_solver(captcha_image_url: str, session: requests.session) -> dict:
 #    r = requests.post(url=url, json=data)
 #    j = json.loads(r.text)
 #    return j
-     url="https://api.nopecha.com/"
-     data = {
-         "key": NOPECHA_USERKEY,
-         "type": "textcaptcha",
-         "image_urls": [captcha_image_url]
-     }
-     res1 = requests.post(url=url, json=data)
-     tokdat = json.loads(res1.text)
-     id = tokdat["data"]
-     data2 = {
-         "key": NOPECHA_USERKEY,
-         "id": id,
-     }
-     res = requests.get(url=url, json=data2)
-     ans = json.loads(res.text)
+     nopecha.api_key = NOPECHA_USERKEY
+     ans = nopecha.Recognition.solve(
+        type='textcaptcha',
+        image_urls=[captcha_image_url],
+     )
      return ans
 # 处理验证码解决结果
 def handle_captcha_solved_result(solved: dict) -> str:
