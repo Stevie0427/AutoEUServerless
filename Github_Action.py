@@ -114,19 +114,19 @@ def captcha_solver(captcha_image_url: str, session: requests.session) -> dict:
 
     response = session.get(captcha_image_url)
     encoded_string = base64.b64encode(response.content)
-    url = "https://api.apitruecaptcha.org/one/gettext"
-
-    data = {
-        "userid": TRUECAPTCHA_USERID,
-        "apikey": TRUECAPTCHA_APIKEY,
-        "case": "mixed",
-        "mode": "auto",
-        "data": str(encoded_string)[2:-1],
-    }
-    r = requests.post(url=url, json=data)
-    j = json.loads(r.text)
-    return j
-
+#    url = "https://api.apitruecaptcha.org/one/gettext"
+#
+#    data = {
+#        "userid": TRUECAPTCHA_USERID,
+#        "apikey": TRUECAPTCHA_APIKEY,
+#        "case": "mixed",
+#        "mode": "auto",
+#        "data": str(encoded_string)[2:-1],
+#    }
+#    r = requests.post(url=url, json=data)
+#    j = json.loads(r.text)
+#    return j
+      url="https://api.nopecha.com/"
 # 处理验证码解决结果
 def handle_captcha_solved_result(solved: dict) -> str:
     # 处理验证码解决结果# 
