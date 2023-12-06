@@ -134,12 +134,19 @@ def captcha_solver(captcha_image_url: str, session: requests.session) -> dict:
      }
      res1 = requests.post(url=url, json=data)
      tokdat = json.loads(res1.text)
-     tok = 
+     id = tokdat["data"]
+     data2 = {
+         "key": NOPECHA_USERKEY,
+         "id": id,
+     }
+     res = requests.get(url=url, json=data2)
+     ans = json.loads(res.text)
+     return ans
 # 处理验证码解决结果
 def handle_captcha_solved_result(solved: dict) -> str:
     # 处理验证码解决结果# 
-    if "result" in solved:
-        solved_text = solved["result"]
+    if "data" in solved:
+        solved_text = solved["data"]
         if "RESULT  IS" in solved_text:
             log("[Captcha Solver] 使用的是演示 apikey。")
             # 因为使用了演示 apikey
