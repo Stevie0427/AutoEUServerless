@@ -112,8 +112,8 @@ def captcha_solver(captcha_image_url: str, session: requests.session) -> dict:
     # TrueCaptcha API 文档: https://apitruecaptcha.org/api
     # 似乎已经无法免费试用,但是充值1刀可以识别3000个二维码,足够用一阵子了
 
-    response = session.get(captcha_image_url)
-    encoded_string = base64.b64encode(response.content)
+#    response = session.get(captcha_image_url)
+#    encoded_string = base64.b64encode(response.content)
 #    url = "https://api.apitruecaptcha.org/one/gettext"
 #
 #    data = {
@@ -126,7 +126,15 @@ def captcha_solver(captcha_image_url: str, session: requests.session) -> dict:
 #    r = requests.post(url=url, json=data)
 #    j = json.loads(r.text)
 #    return j
-      url="https://api.nopecha.com/"
+     url="https://api.nopecha.com/"
+     data = {
+         "key": NOPECHA_USERKEY,
+         "type": "textcaptcha",
+         "image_urls": [captcha_image_url]
+     }
+     res1 = requests.post(url=url, json=data)
+     tokdat = json.loads(res1.text)
+     tok = 
 # 处理验证码解决结果
 def handle_captcha_solved_result(solved: dict) -> str:
     # 处理验证码解决结果# 
